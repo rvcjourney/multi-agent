@@ -70,7 +70,7 @@ app.post('/api/submit-linkedin', forwardToN8n)
 
 // ── Catch-all: serve React app for all non-API routes ─────────────
 if (existsSync(distPath)) {
-  app.get('*', (req, res) => {
+  app.get('/{*path}', (req, res) => {
     res.sendFile(resolve(distPath, 'index.html'))
   })
 }
