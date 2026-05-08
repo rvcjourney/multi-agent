@@ -1,0 +1,15 @@
+services:
+  motm-os:
+    build:
+      context: .
+      args:
+        VITE_APIFY_WEBHOOK: https://n8n.b2botix.ai/webhook/apify_agent
+        VITE_PROSPEO_WEBHOOK: https://n8n.b2botix.ai/webhook/prosepo_agent
+        VITE_SALESSQL_WEBHOOK: https://n8n.b2botix.ai/webhook/salesql_agent
+        VITE_EMAIL_EXTRACTOR_URL: http://72.60.99.90:8083/
+        VITE_DATA_SCRAPER_URL: http://72.60.99.90:4003/
+    ports:
+      - "4005:4005"
+    environment:
+      - PROSPEO_API_KEY=pk_105019069d9e84e099e43006dee6700956d879fabe3698a7c162fd70276ff9b3
+    restart: unless-stopped
