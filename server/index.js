@@ -68,6 +68,11 @@ async function forwardToN8n(req, res) {
 app.post('/api/submit-search', forwardToN8n)
 app.post('/api/submit-linkedin', forwardToN8n)
 
+// ── Health check ──────────────────────────────────────────────────
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() })
+})
+
 // ── Catch-all: serve React app for all non-API routes ─────────────
 if (existsSync(distPath)) {
   app.get('/{*path}', (req, res) => {
@@ -75,5 +80,16 @@ if (existsSync(distPath)) {
   })
 }
 
+// ── Global error handler ──────────────────────────────────────────
+app.use((err, req, res, next) => {
+  console.error(`[${new Date().toISOString()}] Unhandled error:`, err.message)
+  res.status(500).json({ error: 'Internal server error' })
+})
+
+// ── Graceful shutdown ─────────────────────────────────────────────
 const PORT = process.env.PORT || 4005
-app.listen(PORT, '0.0.0.0', () => console.log(`Server running on http://0.0.0.0:${PORT}`))
+const server = app.listen(PORT, '0.0.0.0', () => console.log(`Server running on http://0.0.0.0:${PORT}`))
+
+process.on('SIGTERM', () => {
+  server.close(() => console.log('Server shut down gracefully'))
+})
