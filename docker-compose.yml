@@ -12,6 +12,7 @@ services:
       - "4005:4005"
     environment:
       - PROSPEO_API_KEY=pk_105019069d9e84e099e43006dee6700956d879fabe3698a7c162fd70276ff9b3
+      - VITE_PROSPEO_WEBHOOK=https://n8n.b2botix.ai/webhook/prosepo_agent
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:4005/health"]
