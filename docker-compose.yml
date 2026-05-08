@@ -13,3 +13,12 @@ services:
     environment:
       - PROSPEO_API_KEY=pk_105019069d9e84e099e43006dee6700956d879fabe3698a7c162fd70276ff9b3
     restart: unless-stopped
+    networks:
+      - motm-net
+
+networks:
+  motm-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/24
