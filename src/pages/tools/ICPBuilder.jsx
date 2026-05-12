@@ -23,7 +23,7 @@ export default function ICPBuilder() {
           style={{
             width: '1100px',
             minWidth: '100%',
-            height: '1000px',
+            height: '700px',
             border: 'none',
             display: 'block',
           }}
