@@ -10,6 +10,12 @@ export default function ICPBuilder() {
         Back
       </Link>
 
+      {!TOOL_URL && (
+        <div style={{ padding: 20, color: '#ef4444', fontWeight: 600 }}>
+          ⚠ VITE_ICP_BUILDER_URL is not set — rebuild the Docker image with --build
+        </div>
+      )}
+
       <div>
         <iframe
           src={TOOL_URL}
