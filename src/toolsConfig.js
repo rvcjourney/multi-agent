@@ -48,6 +48,18 @@ export const TOOLS = [
     to: '/tools/data-scraper',
   },
   {
+    id: 'icp-builder',
+    title: 'ICP Builder',
+    description: 'Build your Ideal Customer Profile with AI — define, refine and target your perfect audience.',
+    icon: 'people_alt',
+    iconBg: '#0f766e',
+    iconColor: '#0f766e',
+    dots: ['#0f766e', '#14b8a6', '#99f6e4'],
+    credits: 5,
+    category: 'Data Research',
+    to: '/tools/icp-builder',
+  },
+  {
     id: 'prospeo',
     title: 'Contact Enrichment',
     description: 'Find verified prospect contact data including emails, job titles, and LinkedIn profiles.',
