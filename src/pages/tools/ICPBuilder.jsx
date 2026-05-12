@@ -10,18 +10,12 @@ export default function ICPBuilder() {
         Back
       </Link>
 
-      <div style={{
-        borderRadius: '16px',
-        overflowX: 'auto',
-        overflowY: 'visible',
-        border: '1.5px solid #e5e7eb',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-      }}>
+      <div>
         <iframe
           src={TOOL_URL}
           title="ICP Builder"
           style={{
-            width: '1100px',
+            width: '1200px',
             minWidth: '100%',
             height: '700px',
             border: 'none',
