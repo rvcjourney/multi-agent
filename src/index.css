@@ -318,11 +318,6 @@ body {
 @media (max-width: 1000px) {
   .tools-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 640px) {
-  .tools-grid { grid-template-columns: 1fr; }
-  .main-content { padding: 20px 16px; margin-left: 0; }
-  .sidebar { display: none; }
-}
 
 .tool-card {
   background: #fff;
@@ -1033,4 +1028,162 @@ textarea.form-control {
 @keyframes tagPop {
   from { opacity: 0; transform: scale(0.7); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Mobile Topbar ───────────────────────────────── */
+.mobile-topbar {
+  display: none;
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+.mobile-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* ── Sidebar Backdrop ────────────────────────────── */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 250;
+  animation: backdropFadeIn 0.2s ease;
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Responsive: Tablet (≤ 1024px) ──────────────── */
+@media (max-width: 1024px) {
+  .main-content { padding: 28px 24px; }
+}
+
+/* ── Responsive: Mobile (≤ 768px) ───────────────── */
+@media (max-width: 768px) {
+  /* Show mobile topbar */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    background: #fff;
+    border-bottom: 1px solid #e8eaf0;
+    padding: 0 16px;
+    z-index: 200;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+
+  .hamburger-btn:hover { background: #f4f6fb; }
+
+  /* Sidebar: slide-in overlay on mobile */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 260px !important;
+    transition: transform 0.25s ease, width 0.25s ease;
+    z-index: 300;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Always show full labels when sidebar is open on mobile */
+  .sidebar.mobile-open .brand-name,
+  .sidebar.mobile-open .nav-label,
+  .sidebar.mobile-open .user-info {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    width: auto !important;
+  }
+
+  /* Hide desktop collapse button on mobile */
+  .collapse-btn { display: none; }
+
+  /* Main content takes full width, offset for topbar */
+  .main-content,
+  .main-content.sidebar-collapsed {
+    margin-left: 0 !important;
+    padding: 72px 16px 28px;
+  }
+
+  /* Dashboard */
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .page-header { margin-bottom: 18px; }
+  .page-title { font-size: 20px; }
+  .greeting { font-size: 15px; }
+  .header-actions { flex-wrap: wrap; gap: 8px; }
+  .btn-credits, .btn-how { padding: 7px 12px; font-size: 12px; }
+
+  /* Filter tabs */
+  .filter-tabs { gap: 6px; margin-bottom: 18px; }
+  .filter-tab { padding: 6px 14px; font-size: 12px; }
+
+  /* Tool card */
+  .tool-card { padding: 16px 14px; }
+  .card-title { font-size: 13px; }
+  .card-desc { font-size: 11px; line-height: 1.45; }
+
+  /* Tool page */
+  .tool-page { max-width: 100%; }
+  .form-card { padding: 18px 14px; }
+  .tool-page-title { font-size: 17px; }
+  .tool-page-subtitle { font-size: 12px; }
+
+  /* Centered header: hide spacer so back btn + title fit */
+  .back-btn { padding: 6px 10px; font-size: 12px; }
+
+  /* Tab bars */
+  .ps-tab-btn { padding: 8px 12px; font-size: 11px; }
+
+  /* Submit buttons full-width on mobile */
+  .submit-btn, .ps-submit-btn { width: 100%; justify-content: center; }
+
+  /* Result tables: horizontal scroll */
+  .results-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Tag input */
+  .ps-tag-wrap { padding: 6px 8px; }
+  .ps-tag { font-size: 11px; max-width: 180px; }
+
+  /* Centered page header: hide balance spacer so title stays near-center */
+  .tool-header-spacer { display: none; }
+
+  /* Centered header wraps nicely without the spacer */
+  .tool-centered-header { flex-wrap: wrap; gap: 10px; }
+}
+
+/* ── Responsive: Small mobile (≤ 480px) ─────────── */
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: 1fr; }
+  .page-title { font-size: 18px; }
+  .form-card { padding: 16px 12px; }
+  .card-desc { display: none; }
 }

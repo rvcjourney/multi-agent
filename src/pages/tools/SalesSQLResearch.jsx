@@ -235,7 +235,7 @@ export default function SalesSQLResearch() {
   return (
     <>
       {/* Centered header row */}
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 28 }}>
+      <div className="tool-centered-header" style={{ display: 'flex', alignItems: 'center', marginBottom: 28 }}>
         <Link to="/" className="back-btn" style={{ flexShrink: 0 }}>
           <span className="material-icons-round" style={{ fontSize: 16 }}>arrow_back</span>
           Back
@@ -253,7 +253,7 @@ export default function SalesSQLResearch() {
           </div>
         </div>
 
-        <div style={{ flexShrink: 0, width: 160 }} />
+        <div className="tool-header-spacer" style={{ flexShrink: 0, width: 160 }} />
       </div>
 
       {/* Tab bar */}

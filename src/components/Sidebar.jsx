@@ -8,13 +8,19 @@ const NAV_ITEMS = [
   { to: '/profile', icon: 'person', label: 'Profile' },
 ]
 
-export default function Sidebar() {
+export default function Sidebar({ mobileOpen, onMobileClose }) {
   const [collapsed, setCollapsed] = useState(true)
 
+  const classes = [
+    'sidebar',
+    collapsed ? 'collapsed' : '',
+    mobileOpen ? 'mobile-open' : '',
+  ].filter(Boolean).join(' ')
+
   return (
-    <aside className={`sidebar${collapsed ? ' collapsed' : ''}`}>
+    <aside className={classes}>
       <div className="sidebar-brand">
-        <NavLink to="/" className="brand-logo">
+        <NavLink to="/" className="brand-logo" onClick={onMobileClose}>
           <div className="brand-icon">
             <span className="material-icons-round" style={{ fontSize: 18 }}>rocket_launch</span>
           </div>
@@ -38,7 +44,8 @@ export default function Sidebar() {
             to={to}
             end={end}
             className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
-            title={collapsed ? label : undefined}
+            title={collapsed && !mobileOpen ? label : undefined}
+            onClick={onMobileClose}
           >
             <span className="material-icons-round">{icon}</span>
             <span className="nav-label">{label}</span>

@@ -463,7 +463,7 @@ export default function ProspeoResearch() {
 
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: 28 }}>
+      <div className="tool-centered-header" style={{ display: 'flex', alignItems: 'center', marginBottom: 28 }}>
         <Link to="/" className="back-btn" style={{ flexShrink: 0 }}>
           <span className="material-icons-round" style={{ fontSize: 16 }}>arrow_back</span>
           Back
@@ -484,7 +484,7 @@ export default function ProspeoResearch() {
         </div>
 
         {/* spacer to balance the back button */}
-        <div style={{ flexShrink: 0, width: 250 }} />
+        <div className="tool-header-spacer" style={{ flexShrink: 0, width: 250 }} />
       </div>
 
       {/* Tab bar — outside the card, same style as Apify */}
