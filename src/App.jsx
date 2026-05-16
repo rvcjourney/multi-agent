@@ -7,6 +7,7 @@ import ProspeoResearch from './pages/tools/ProspeoResearch'
 import EmailExtractor from './pages/tools/EmailExtractor'
 import DataScraper from './pages/tools/DataScraper'
 import ICPBuilder from './pages/tools/ICPBuilder'
+import LinkedInScraper from './pages/tools/LinkedInScraper'
 import Placeholder from './pages/Placeholder'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/tools/email-extractor" element={<EmailExtractor />} />
         <Route path="/tools/data-scraper" element={<DataScraper />} />
         <Route path="/tools/icp-builder" element={<ICPBuilder />} />
+        <Route path="/tools/linkedin-scraper" element={<LinkedInScraper />} />
         <Route path="/billing" element={<Placeholder title="Credits & Billing" />} />
         <Route path="/flows" element={<Placeholder title="Flow Management" />} />
         <Route path="/profile" element={<Placeholder title="Profile" />} />

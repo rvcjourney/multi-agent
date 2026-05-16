@@ -9,6 +9,7 @@ services:
         VITE_EMAIL_EXTRACTOR_URL: http://72.60.99.90:8083/
         VITE_DATA_SCRAPER_URL: http://72.60.99.90:4003/
         VITE_ICP_BUILDER_URL: http://72.60.99.90:4007/
+        VITE_LINKEDIN_SCRAPER_URL: http://72.60.99.90:4008/
     ports:
       - "4005:4005"
     environment:

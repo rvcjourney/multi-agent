@@ -60,6 +60,18 @@ export const TOOLS = [
     to: '/tools/icp-builder',
   },
   {
+    id: 'linkedin-scraper',
+    title: 'LinkedIn Scraper',
+    description: 'Scrape LinkedIn profiles, company pages, and posts to extract structured B2B data at scale.',
+    icon: 'linked_camera',
+    iconBg: '#0a66c2',
+    iconColor: '#0a66c2',
+    dots: ['#0a66c2', '#2d8cdb', '#a8d4f5'],
+    credits: 6,
+    category: 'Data Research',
+    to: '/tools/linkedin-scraper',
+  },
+  {
     id: 'prospeo',
     title: 'Contact Enrichment',
     description: 'Find verified prospect contact data including emails, job titles, and LinkedIn profiles.',
