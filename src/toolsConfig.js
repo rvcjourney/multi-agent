@@ -2,7 +2,7 @@ export const TOOLS = [
   {
     id: 'apify',
     title: 'Local Data Research',
-    description: 'AI-powered market research — finds target companies by location, industry, and size.',
+    description: 'Find local SMEs, consultants, and small industries with verified business contact information.',
     icon: 'travel_explore',
     iconBg: '#ff6b35',
     iconColor: '#ff6b35',
@@ -14,7 +14,7 @@ export const TOOLS = [
   {
     id: 'salessql',
     title: 'Contact Enrichment Linkedin_url',
-    description: 'Search and extract B2B sales data using smart SQL-style queries across business databases.',
+    description: 'Extract emails and phone numbers using LinkedIn profile URLs for quick prospect enrichment.',
     icon: 'manage_search',
     iconBg: '#4f7cff',
     iconColor: '#4f7cff',
@@ -26,7 +26,7 @@ export const TOOLS = [
   {
     id: 'email-extractor',
     title: 'Email Extractor',
-    description: 'Extract verified email addresses from websites, domains, and online sources instantly.',
+    description: 'Find targeted business email addresses using company websites, designations, and location filters.',
     icon: 'alternate_email',
     iconBg: '#8b5cf6',
     iconColor: '#8b5cf6',
@@ -38,7 +38,7 @@ export const TOOLS = [
   {
     id: 'data-scraper',
     title: 'Data Scraper',
-    description: 'Scrape and extract structured data from websites and online sources at scale.',
+    description: 'Collect structured data from MNCs, listed companies, and large industrial organizations efficiently.',
     icon: 'data_object',
     iconBg: '#f59e0b',
     iconColor: '#f59e0b',
@@ -50,7 +50,7 @@ export const TOOLS = [
   {
     id: 'icp-builder',
     title: 'ICP Builder',
-    description: 'Build your Ideal Customer Profile with AI — define, refine and target your perfect audience.',
+    description: 'Build AI-powered Ideal Customer Profiles for smarter targeting and better lead generation.',
     icon: 'people_alt',
     iconBg: '#0f766e',
     iconColor: '#0f766e',
@@ -61,8 +61,8 @@ export const TOOLS = [
   },
   {
     id: 'linkedin-scraper',
-    title: 'LinkedIn Scraper',
-    description: 'Scrape LinkedIn profiles, company pages, and posts to extract structured B2B data at scale.',
+    title: 'LinkedIn Profile Scraper',
+    description: 'Scrape LinkedIn profiles based on custom user queries and extract link.',
     icon: 'linked_camera',
     iconBg: '#0a66c2',
     iconColor: '#0a66c2',
@@ -74,7 +74,7 @@ export const TOOLS = [
   {
     id: 'prospeo',
     title: 'Contact Enrichment',
-    description: 'Find verified prospect contact data including emails, job titles, and LinkedIn profiles.',
+    description: 'Access premium verified contact details of decision-makers for high-quality B2B outreach.',
     icon: 'person_search',
     iconBg: '#10b981',
     iconColor: '#10b981',
